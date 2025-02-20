@@ -56,5 +56,5 @@
         "temp/": true,
         "Temp/": true
     },
-    "dotnet.defaultSolution": "brackeyJam25.1.sln"
+    "dotnet.defaultSolution": "Running-Late.sln"
 }
