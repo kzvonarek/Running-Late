@@ -11,6 +11,12 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/City.unity
     guid: dd36590c72e28497aa4e6cf800fe807e
+  - enabled: 1
+    path: Assets/Scenes/Fake Interview Building.unity
+    guid: 8d39bcd723a014e2db6a364355a1375d
+  - enabled: 1
+    path: Assets/Scenes/Interview Building.unity
+    guid: f060a6b5b43cd46dc9e0fc374cbfbad0
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   m_UseUCBPForAssetBundles: 0

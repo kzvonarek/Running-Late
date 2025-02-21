@@ -5,6 +5,9 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
+    // player
+    private GameObject player;
+
     // game timer
     [SerializeField] float gameTimer;
 
@@ -20,11 +23,17 @@ public class GameManager : MonoBehaviour
     // don't destroy on load
     private static GameManager instance;
 
+    // ExitDoor.cs - fake interview visited/realization check [Fake Interview Building Scene]
+    [HideInInspector] public bool fakeIntRealization;
+
     void Start()
     {
         FindGameTimerText();
-
+        FindPlayer();
         Application.targetFrameRate = 60;
+
+        // // for testing
+        // fakeIntRealization = true;
     }
 
     void Update()
@@ -77,11 +86,23 @@ public class GameManager : MonoBehaviour
     void OnNewScene(Scene scene, LoadSceneMode mode)
     {
         FindGameTimerText(); // find the timer text object again
+        FindPlayer(); // find player again
+
+        if (SceneManager.GetActiveScene().name == "City" && fakeIntRealization)
+        {
+            player.transform.position = new Vector2(GameObject.Find("Fake Interview Door").transform.position.x,
+                                            GameObject.Find("Fake Interview Door").transform.position.y - 0.75f);
+        }
     }
 
     void FindGameTimerText()
     {
         timerTextObj = GameObject.Find("Game Timer");
         timerText = timerTextObj.GetComponentInChildren<TMP_Text>();
+    }
+
+    void FindPlayer()
+    {
+        player = GameObject.FindGameObjectWithTag("Player");
     }
 }
