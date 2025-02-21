@@ -130,6 +130,7 @@ GameObject:
   - component: {fileID: 57365435}
   - component: {fileID: 57365437}
   - component: {fileID: 57365436}
+  - component: {fileID: 57365438}
   m_Layer: 0
   m_Name: Door (To Bathroom)
   m_TagString: Untagged
@@ -253,6 +254,29 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &57365438
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 57365434}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 331cbf5cb03144d10a55579729df8bc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cinemachineCamera: {fileID: 122699478}
+  rooms:
+  - {fileID: 1468355110}
+  - {fileID: 737584630}
+  - {fileID: 323195707}
+  doors:
+  - {fileID: 942565629}
+  - {fileID: 766667032}
+  - {fileID: 64480803}
+  - {fileID: 57365434}
+  playerYAdjustment: 0.74
 --- !u!1 &64480803
 GameObject:
   m_ObjectHideFlags: 0
@@ -264,6 +288,7 @@ GameObject:
   - component: {fileID: 64480804}
   - component: {fileID: 64480806}
   - component: {fileID: 64480805}
+  - component: {fileID: 64480807}
   m_Layer: 0
   m_Name: Door (To Kitchen)
   m_TagString: Untagged
@@ -387,6 +412,29 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &64480807
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 64480803}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 331cbf5cb03144d10a55579729df8bc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cinemachineCamera: {fileID: 122699478}
+  rooms:
+  - {fileID: 1468355110}
+  - {fileID: 737584630}
+  - {fileID: 323195707}
+  doors:
+  - {fileID: 942565629}
+  - {fileID: 766667032}
+  - {fileID: 64480803}
+  - {fileID: 57365434}
+  playerYAdjustment: 0.74
 --- !u!1 &68424526
 GameObject:
   m_ObjectHideFlags: 0
@@ -633,7 +681,7 @@ MonoBehaviour:
       Offset: {x: 0, y: 0}
   CenterOnActivate: 1
   TargetOffset: {x: 0, y: 0, z: 0}
-  Damping: {x: 1, y: 1, z: 1}
+  Damping: {x: 0, y: 0, z: 0}
   Lookahead:
     Enabled: 0
     Time: 0
@@ -659,7 +707,7 @@ MonoBehaviour:
   m_StreamingVersion: 20241001
   m_LegacyPriority: 0
   Target:
-    TrackingTarget: {fileID: 737584632}
+    TrackingTarget: {fileID: 1468355112}
     LookAtTarget: {fileID: 0}
     CustomLookAtTarget: 0
   Lens:
@@ -691,7 +739,7 @@ Transform:
   m_GameObject: {fileID: 122699476}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.2, y: -26.767, z: -10}
+  m_LocalPosition: {x: 1.2, y: -4.67, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1558,7 +1606,7 @@ Transform:
   m_GameObject: {fileID: 323195707}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.2, y: -15.67, z: 0}
+  m_LocalPosition: {x: 1.2, y: -29.74, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -2229,7 +2277,7 @@ Transform:
   m_GameObject: {fileID: 519420028}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.2, y: -26.767, z: -10}
+  m_LocalPosition: {x: 1.2, y: -4.67, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2565,8 +2613,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 737584630}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.2, y: -26.767, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 1.2, y: -17.817001, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -2589,8 +2637,9 @@ GameObject:
   - component: {fileID: 766667033}
   - component: {fileID: 766667035}
   - component: {fileID: 766667034}
+  - component: {fileID: 766667036}
   m_Layer: 0
-  m_Name: Door (To Bedroom)
+  m_Name: Door (To Bedroom B)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2605,7 +2654,7 @@ Transform:
   m_GameObject: {fileID: 766667032}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 4.34, y: -1.7079983, z: 0}
+  m_LocalPosition: {x: 4.46, y: -1.7007, z: 0}
   m_LocalScale: {x: 1.3999326, y: 2.2751, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2712,6 +2761,29 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &766667036
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 766667032}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 331cbf5cb03144d10a55579729df8bc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cinemachineCamera: {fileID: 122699478}
+  rooms:
+  - {fileID: 1468355110}
+  - {fileID: 737584630}
+  - {fileID: 323195707}
+  doors:
+  - {fileID: 942565629}
+  - {fileID: 766667032}
+  - {fileID: 64480803}
+  - {fileID: 57365434}
+  playerYAdjustment: 0.74
 --- !u!1 &835156487
 GameObject:
   m_ObjectHideFlags: 0
@@ -3225,8 +3297,9 @@ GameObject:
   - component: {fileID: 942565630}
   - component: {fileID: 942565632}
   - component: {fileID: 942565631}
+  - component: {fileID: 942565633}
   m_Layer: 0
-  m_Name: Door (To Bedroom)
+  m_Name: Door (To Bedroom K)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3241,7 +3314,7 @@ Transform:
   m_GameObject: {fileID: 942565629}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -4.42, y: -1.71, z: 0}
+  m_LocalPosition: {x: -4.56, y: -1.7007, z: 0}
   m_LocalScale: {x: 1.3999326, y: 2.2751, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3348,6 +3421,29 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &942565633
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 942565629}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 331cbf5cb03144d10a55579729df8bc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cinemachineCamera: {fileID: 122699478}
+  rooms:
+  - {fileID: 1468355110}
+  - {fileID: 737584630}
+  - {fileID: 323195707}
+  doors:
+  - {fileID: 942565629}
+  - {fileID: 766667032}
+  - {fileID: 64480803}
+  - {fileID: 57365434}
+  playerYAdjustment: 0.74
 --- !u!1 &1011692741
 GameObject:
   m_ObjectHideFlags: 0
@@ -5521,8 +5617,8 @@ SceneRoots:
   - {fileID: 1666435363}
   - {fileID: 1563796632}
   - {fileID: 1468355112}
-  - {fileID: 323195709}
   - {fileID: 737584632}
+  - {fileID: 323195709}
   - {fileID: 100049901}
   - {fileID: 1601978588}
   - {fileID: 1372376597}
