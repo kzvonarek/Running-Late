@@ -3,7 +3,8 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 3
-  tags: []
+  tags:
+  - Game Timer
   layers:
   - Default
   - TransparentFX
@@ -41,8 +42,11 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
-  - name: Room
+  - name: Bedroom
     uniqueID: 1282664163
+    locked: 0
+  - name: City
+    uniqueID: 1447772851
     locked: 0
   - name: Player
     uniqueID: 3555514239

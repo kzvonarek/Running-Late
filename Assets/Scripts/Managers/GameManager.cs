@@ -1,14 +1,20 @@
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
     // game timer
     [SerializeField] float gameTimer;
-    [SerializeField] TMP_Text timerText;
+
+    // timer text
+    private GameObject timerTextObj;
+    private TMP_Text timerText;
     private int minutes;
     private int seconds;
+
+    // game condition
     private bool gameOver = false;
 
     // don't destroy on load
@@ -16,6 +22,8 @@ public class GameManager : MonoBehaviour
 
     void Start()
     {
+        FindGameTimerText();
+
         Application.targetFrameRate = 60;
     }
 
@@ -54,5 +62,26 @@ public class GameManager : MonoBehaviour
         }
         instance = this;
         DontDestroyOnLoad(gameObject);
+    }
+
+    void OnEnable()
+    {
+        SceneManager.sceneLoaded += OnNewScene;
+    }
+
+    void OnDisable()
+    {
+        SceneManager.sceneLoaded -= OnNewScene;
+    }
+
+    void OnNewScene(Scene scene, LoadSceneMode mode)
+    {
+        FindGameTimerText(); // find the timer text object again
+    }
+
+    void FindGameTimerText()
+    {
+        timerTextObj = GameObject.Find("Game Timer");
+        timerText = timerTextObj.GetComponentInChildren<TMP_Text>();
     }
 }
