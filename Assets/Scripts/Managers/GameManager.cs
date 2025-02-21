@@ -11,6 +11,14 @@ public class GameManager : MonoBehaviour
     private int seconds;
     private bool gameOver = false;
 
+    // don't destroy on load
+    private static GameManager instance;
+
+    void Start()
+    {
+        Application.targetFrameRate = 60;
+    }
+
     void Update()
     {
         // reduce game timer by 1 second intervals
@@ -34,5 +42,17 @@ public class GameManager : MonoBehaviour
         minutes = Mathf.FloorToInt(gameTimer / 60);
         seconds = Mathf.FloorToInt(gameTimer % 60);
         timerText.text = string.Format("{0:0}:{1:00}", minutes, seconds);
+    }
+
+    void Awake()
+    {
+        // don't destroy on load to new scene
+        if (instance != null && instance != this)
+        {
+            Destroy(gameObject);
+            return;
+        }
+        instance = this;
+        DontDestroyOnLoad(gameObject);
     }
 }
