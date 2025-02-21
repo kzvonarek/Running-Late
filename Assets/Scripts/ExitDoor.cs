@@ -46,7 +46,7 @@ public class ExitDoor : MonoBehaviour
             else if (SceneManager.GetActiveScene().name == "House" && !allItemsCollected)
             {
                 // TODO: add speech bubble saying this
-                Debug.Log("I don't have everything yet");
+                Debug.Log("I don't have everything yet!");
             }
 
             // go from city to fake interview building (don't allow re-entry)
