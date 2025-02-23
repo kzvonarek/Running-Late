@@ -1,5 +1,5 @@
 # Running Late
-Solo-project submission by Kristijan Zvonarek for Brackeys Game Jam 2025.1.
+Solo-project based on Brackeys Game Jam 2025.1's theme: Nothing Can Go Wrong
 
 Although prepared the night before, chaos ensues as you attempt to reach your interview...
 
