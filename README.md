@@ -1,5 +1,5 @@
 # Running Late
-Solo video game based on Brackeys Game Jam 2025.1's theme: Nothing Can Go Wrong
+Solo video game based on **Brackeys Game Jam 2025.1's** theme: Nothing Can Go Wrong
 
 Although prepared the night before, chaos ensues unexpectadly as you attempt to reach your interview on time.
 
