@@ -16,6 +16,11 @@ public class GameManager : MonoBehaviour
     private TMP_Text timerText;
     private int minutes;
     private int seconds;
+    private int milliseconds;
+
+    // pause menu
+    [SerializeField] GameObject pauseMenu;
+    private bool paused;
 
     // game condition
     private bool gameOver = false;
@@ -31,6 +36,7 @@ public class GameManager : MonoBehaviour
         FindGameTimerText();
         FindPlayer();
         Application.targetFrameRate = 60;
+        Time.timeScale = 1;
 
         // // for testing
         // fakeIntRealization = true;
@@ -58,7 +64,32 @@ public class GameManager : MonoBehaviour
         // update timer text to minutes and seconds on screen
         minutes = Mathf.FloorToInt(gameTimer / 60);
         seconds = Mathf.FloorToInt(gameTimer % 60);
-        timerText.text = string.Format("{0:0}:{1:00}", minutes, seconds);
+        milliseconds = Mathf.FloorToInt(gameTimer * 100 % 100);
+        timerText.text = string.Format("{0:0}:{1:00}.{2:00}", minutes, seconds, milliseconds);
+
+        // pause game when player presses escape or presses pause button
+        if (Input.GetKeyDown(KeyCode.Escape) && paused == false)
+        {
+            pauseGame();
+        }
+        else if (Input.GetKeyDown(KeyCode.Escape) && paused == true) // unpause game
+        {
+            unpauseGame();
+        }
+    }
+
+    public void pauseGame()
+    {
+        paused = true;
+        pauseMenu.SetActive(true); // make pause menu visible
+        Time.timeScale = 0;
+    }
+
+    public void unpauseGame()
+    {
+        paused = false;
+        pauseMenu.SetActive(false); // make pause menu invisible
+        Time.timeScale = 1;
     }
 
     void Awake()

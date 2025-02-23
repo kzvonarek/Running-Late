@@ -1509,7 +1509,7 @@ Transform:
   m_GameObject: {fileID: 263372480}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.04, y: 9.54, z: 0}
+  m_LocalPosition: {x: -102.2, y: 9.54, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -5428,6 +5428,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameTimer: 300
+  pauseMenu: {fileID: 0}
   fakeIntRealization: 0
 --- !u!212 &1601978587
 SpriteRenderer:
@@ -5493,7 +5494,7 @@ Transform:
   m_GameObject: {fileID: 1601978585}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.04, y: 11, z: 0}
+  m_LocalPosition: {x: -102.2, y: 11, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
